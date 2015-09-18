@@ -12,7 +12,7 @@ define('USER', "{{ DB_USER }}");
 define('PW', "{{ DB_PASS }}");
 define('DB', "homer_users");
 
-/* Homer connection 
+/* Homer connection
 *  this user must have the same password for all Homer nodes
 *  please define all your nodes in homer_nodes table
 */
@@ -25,7 +25,7 @@ define('HOMER_TABLE', "sip_capture");
 
 /*********************************************************************************/
 
-/* webHomer Settings 
+/* webHomer Settings
 *  Adjust to reflect your system preferences
 */
 
