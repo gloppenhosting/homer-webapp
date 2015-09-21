@@ -1,11 +1,9 @@
-FROM centos:centos7
+FROM debian:jessie
 MAINTAINER Andreas Krüger
+ENV DEBIAN_FRONTEND noninteractive
 
-# Deps from: https://github.com/sipcapture/homer/blob/master/scripts/extra/homer_installer.sh
-RUN yum install -y autoconf automake bzip2 cpio curl curl-devel curl-devel \
-                   expat-devel fileutils make gcc gcc-c++ gettext-devel gnutls-devel openssl \
-                   openssl-devel openssl-devel mod_ssl perl patch unzip wget zip zlib zlib-devel \
-                   bison flex mysql mysql-devel pcre-devel libxml2-devel sox httpd php php-gd php-mysql php-json
+RUN apt-get update -qq
+RUN apt-get install --no-install-recommends --no-install-suggests -yqq ca-certificates apache2 php5 php5-cli php5-gd php-pear php5-dev php5-mysql php5-json php-services-json git
 
 RUN git clone --depth 1 https://github.com/sipcapture/homer/ /homer
 
